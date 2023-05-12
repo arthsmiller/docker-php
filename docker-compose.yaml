@@ -1,0 +1,66 @@
+version: '3.8'
+
+services:
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: php
+    restart: always
+    volumes:
+      - ./app:/var/www/html
+    networks:
+      - app_network
+    environment:
+      PHP_OPCACHE_ENABLE: "1"
+      PHP_OPCACHE_REVALIDATE_FREQ: "0"
+      PHP_OPCACHE_VALIDATE_TIMESTAMPS: "0"
+    depends_on:
+      - mysql
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - ./app:/var/www/html
+      - ./nginx/conf.d:/etc/nginx/conf.d
+    networks:
+      - app_network
+    depends_on:
+      - php
+
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    restart: always
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql/data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: example
+      MYSQL_USER: example
+      MYSQL_PASSWORD: example
+    networks:
+      - app_network
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    restart: always
+    ports:
+      - "8080:80"
+    environment:
+      PMA_HOST: mysql
+      PMA_USER: root
+      PMA_PASSWORD: example
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    driver: bridge
