@@ -19,12 +19,7 @@ RUN apt-get update && apt-get install -y \
     composer \
     git \
     unzip \
-    nano \
-    libicu-dev && \
-    docker-php-ext-install intl mysqli && \
-    pecl install apcu && \
-    docker-php-ext-enable apcu opcache && \
-    php-fpm
+    nano 
 
 RUN curl -1sLf 'https://dl.cloudsmith.io/public/symfony/stable/setup.deb.sh' | bash && apt install symfony-cli
 
