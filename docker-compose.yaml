@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   php:
-    image: php:8.2-fpm
+    image: composer:2.5.5
     container_name: php
     restart: always
     volumes:
@@ -11,11 +11,6 @@ services:
       - app_network
     depends_on:
       - mysql
-    command: >
-      bash -c "
-        php -r \"copy('https://getcomposer.org/installer', 'composer-setup.php');\";
-        php composer-setup.php --install-dir=/usr/local/bin --filename=composer;
-        rm composer-setup.php;"
 
   nginx:
     image: nginx:latest
