@@ -24,15 +24,6 @@ RUN apt-get update && apt-get install -y \
     composer \
     git \
     unzip \
-    nano \
-    nginx
+    nano
     
 RUN curl -sS https://get.symfony.com/cli/installer | bash
-#RUN curl -1sLf 'https://dl.cloudsmith.io/public/symfony/stable/setup.deb.sh' | bash && apt install symfony-cli
-
-COPY --link nginx/arthsdev.conf /etc/nginx/conf.d/arthsdev.conf
-
-EXPOSE 80;
-
-ENTRYPOINT service php8.2-fpm start && /bin/bash
-#CMD service php8.2-fpm start
