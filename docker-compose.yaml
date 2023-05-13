@@ -21,6 +21,8 @@ services:
     restart: always
     ports:
       - "80:80"
+    volumes_from:
+      - php
     volumes:
       - ./app:/var/www/html
       - ./nginx/arthsdev.conf:/etc/nginx/conf.d/arthsdev.conf
@@ -61,3 +63,6 @@ services:
 networks:
   app_network:
     driver: bridge
+
+volumes:
+  php:
