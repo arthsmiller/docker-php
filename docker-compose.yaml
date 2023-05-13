@@ -2,19 +2,16 @@ version: '3.8'
 
 services:
   php:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: php:8.2-alpine
+    #build:
+    #  context: .
+    #  dockerfile: Dockerfile
     container_name: php
     restart: always
     volumes:
       - ./app:/var/www/html
     networks:
       - app_network
-    environment:
-      PHP_OPCACHE_ENABLE: "1"
-      PHP_OPCACHE_REVALIDATE_FREQ: "0"
-      PHP_OPCACHE_VALIDATE_TIMESTAMPS: "0"
     depends_on:
       - mysql
 
