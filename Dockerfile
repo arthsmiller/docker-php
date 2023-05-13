@@ -1,10 +1,5 @@
 FROM php:8.2
 
-RUN apt-get update \
-    && apt-get install -y gnupg tzdata \
-    && echo "UTC" > /etc/timezone \
-    && dpkg-reconfigure -f noninteractive tzdata
-
 RUN apt-get update && apt-get install -y \
     curl \
     git \
