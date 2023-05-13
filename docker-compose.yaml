@@ -2,10 +2,7 @@ version: '3.8'
 
 services:
   php:
-    #image: php:8.2-fpm
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: php:8.2-fpm
     container_name: php
     restart: always
     volumes:
@@ -14,7 +11,10 @@ services:
       - app_network
     depends_on:
       - mysql
-    tty: true 
+    command: sh -c "php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
+    && php composer-setup.php \
+    && php -r "unlink('composer-setup.php');" \
+    && mv composer.phar /usr/local/bin/composer"
 
   nginx:
     image: nginx:latest
