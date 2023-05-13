@@ -16,21 +16,21 @@ services:
       - mysql
     tty: true 
 
-  nginx:
-    image: nginx:latest
-    container_name: nginx
-    restart: always
-    ports:
-      - "80:80"
-    volumes_from:
-      - php
-    volumes:
-      - ./app:/var/www/html
-      - ./nginx/arthsdev.conf:/etc/nginx/conf.d/arthsdev.conf
-    networks:
-      - app_network
-    depends_on:
-      - php
+  #nginx:
+  #  image: nginx:latest
+  #  container_name: nginx
+  #  restart: always
+  #  ports:
+  #    - "80:80"
+  #  volumes_from:
+  #    - php
+  #  volumes:
+  #    - ./app:/var/www/html
+  #    - ./nginx/arthsdev.conf:/etc/nginx/conf.d/arthsdev.conf
+  #  networks:
+  #    - app_network
+  #  depends_on:
+  #    - php
 
   mysql:
     image: mysql:latest
