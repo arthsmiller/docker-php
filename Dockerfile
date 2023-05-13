@@ -25,7 +25,8 @@ RUN apt-get update && apt-get install -y \
     git \
     unzip \
     nano 
-
-RUN curl -1sLf 'https://dl.cloudsmith.io/public/symfony/stable/setup.deb.sh' | bash && apt install symfony-cli
+    
+RUN curl -sS https://get.symfony.com/cli/installer | bash
+#RUN curl -1sLf 'https://dl.cloudsmith.io/public/symfony/stable/setup.deb.sh' | bash && apt install symfony-cli
 
 #CMD service php8.2-fpm start
