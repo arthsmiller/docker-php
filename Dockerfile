@@ -2,6 +2,11 @@ FROM ubuntu:22.04
 
 ENV DEBIAN_FRONTEND noninteractive
 
+RUN apt-get update \
+    && apt-get install -y gnupg tzdata \
+    && echo "UTC" > /etc/timezone \
+    && dpkg-reconfigure -f noninteractive tzdata
+
 RUN apt-get update && apt-get install -y \
     software-properties-common \
     curl \
