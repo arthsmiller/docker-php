@@ -30,7 +30,7 @@ RUN apt-get update && apt-get install -y \
 RUN curl -sS https://get.symfony.com/cli/installer | bash
 #RUN curl -1sLf 'https://dl.cloudsmith.io/public/symfony/stable/setup.deb.sh' | bash && apt install symfony-cli
 
-COPY ./nginx/arthsdev.conf /etc/nginx/conf.d/arthsdev.conf
+COPY --link nginx/arthsdev.conf /etc/nginx/conf.d/arthsdev.conf
 
 EXPOSE 80;
 
