@@ -32,5 +32,7 @@ RUN curl -sS https://get.symfony.com/cli/installer | bash
 
 COPY ./nginx/arthsdev.conf /etc/nginx/conf.d/arthsdev.conf
 
+EXPOSE 80;
+
 ENTRYPOINT service php8.2-fpm start && /bin/bash
 #CMD service php8.2-fpm start
