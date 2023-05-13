@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   php:
-    image: php:8.2
+    image: php:8.2-fpm
     container_name: php
     restart: always
     volumes:
