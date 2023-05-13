@@ -7,9 +7,13 @@ RUN apt-get update \
 
 RUN apt-get update && apt-get install -y \
     curl \
-    composer \
     git \
     unzip \
     nano
     
+RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
+    && php composer-setup.php \
+    && php -r "unlink('composer-setup.php');" \
+    && mv composer.phar /usr/local/bin/composer
+
 RUN curl -sS https://get.symfony.com/cli/installer | bash
