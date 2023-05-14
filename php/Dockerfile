@@ -31,5 +31,9 @@ ADD opcache.ini "/usr/local/etc/php/conf.d/opcache.ini"
 #RUN cp /usr/local/etc/php/php.ini-development /usr/local/etc/php/php.ini && \
 #    sed -i 's/short_open_tag=Off' /usr/local/etc/php/php.ini
 
+RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
+    && apt-get install -y nodejs
+    && npm -g install yarn
+
 EXPOSE 9000
 CMD ["php-fpm"]
