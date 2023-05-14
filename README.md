@@ -4,6 +4,8 @@
 
 `docker exec -it php bash`
 
+`composer install`
+
 ---
 
 ### How to clear docker stuff
