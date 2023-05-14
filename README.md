@@ -16,11 +16,11 @@
 
 ### SSL
 
-`certbot certonly --email hi@hi.local --agree-tos --no-eff-email --staging -d hi.local`
+`certbot --nginx --email hi@hi.local --agree-tos --no-eff-email --staging -d hi.local`
 
 if all good
 
-``certbot certonly --email hi@hi.local --agree-tos --no-eff-email --force-renewal -d hi.local``
+``certbot --nginx --email hi@hi.local --agree-tos --no-eff-email --force-renewal -d hi.local``
 
 ---
 
