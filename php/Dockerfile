@@ -13,8 +13,7 @@ RUN apt-get update && apt-get install -y \
     curl \
     git \
     unzip \
-    nano \
-    nodejs
+    nano
 
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
     && php composer-setup.php \
