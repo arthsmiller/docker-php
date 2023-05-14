@@ -17,17 +17,21 @@ services:
     tty: true
     
   nginx:
-    image: nginx:latest
+    build:
+      context: nginx
+      dockerfile: Dockerfile
     container_name: nginx
     restart: always
     ports:
       - 80:80
+      - 443:443
     volumes_from:
       - php
     volumes:
       - ./app:/var/www/html
       - ./nginx/conf.d/:/etc/nginx/conf.d/
       - ./html/:/usr/share/nginx/html/temp/
+      - certs:/etc/letsencrypt
     networks:
       - app_network
     depends_on:
@@ -67,4 +71,4 @@ networks:
     driver: bridge
 
 volumes:
-  php:
+  certs:
