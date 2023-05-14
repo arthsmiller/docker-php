@@ -14,6 +14,14 @@
 
 `composer recipes`
 
+### SSL
+
+`certbot certonly --email hi@hi.local --agree-tos --no-eff-email --staging -d hi.local`
+
+if all good
+
+``certbot certonly --email hi@hi.local --agree-tos --no-eff-email --force-renewal -d hi.local``
+
 ---
 
 ### How to clear docker stuff
