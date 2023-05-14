@@ -34,5 +34,7 @@ ADD opcache.ini "/usr/local/etc/php/conf.d/opcache.ini"
 
 FROM node:lts
 
+RUN npm -g install yarn
+
 EXPOSE 9000
 CMD ["php-fpm"]
