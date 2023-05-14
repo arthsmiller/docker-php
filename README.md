@@ -2,6 +2,12 @@
 
 ## After install
 
+`docker exec -it nginx bash`
+
+`certbot --nginx -d arthsdev.de`
+
+---
+
 `docker exec -it php bash`
 
 `composer install -n`
