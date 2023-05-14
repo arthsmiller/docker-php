@@ -26,11 +26,10 @@ RUN curl -1sLf 'https://dl.cloudsmith.io/public/symfony/stable/setup.deb.sh' | b
 RUN symfony new app --version="6.2.*" --webapp
 
 ENV PHP_OPCACHE_VALIDATE_TIMESTAMPS="0"
-ADD opcache.ini "$PHP_INI_DIR/conf.d/opcache.ini"
+ADD opcache.ini "/usr/local/etc/php/conf.d/opcache.ini"
 
 RUN cp /usr/local/etc/php/php.ini-development /usr/local/etc/php/php.ini && \
-    sed -i 's/upload_max_filesize = 20M/upload_max_filesize = 128M/g' /usr/local/etc/php/php.ini && \
-    sed -i 's/whatever_option = 1234/whatever_option = 4321/g' /usr/local/etc/php/php.ini
+    sed -i 's/short_open_tag=Off' /usr/local/etc/php/php.ini
 
 EXPOSE 9000
 CMD ["php-fpm"]
