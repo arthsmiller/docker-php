@@ -27,7 +27,7 @@ services:
     volumes:
       - ./app:/var/www/html
       - ./nginx/:/etc/nginx/conf.d/
-      - ./html/:/usr/share/nginx/html/
+      - ./html/:/usr/share/nginx/html/temp/
     networks:
       - app_network
     depends_on:
