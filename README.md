@@ -4,7 +4,7 @@
 
 `docker exec -it nginx bash`
 
-`certbot --nginx -d arthsdev.de`
+`certbot --nginx -d hi.local`
 
 ---
 
