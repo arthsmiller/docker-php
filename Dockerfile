@@ -23,6 +23,7 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
 RUN git config --global user.email "hi@hi.local" \
     && git config --global user.name "hi" \
     && curl -sS https://get.symfony.com/cli/installer | bash \
+    && mv /root/.symfony5/bin/symfony /usr/local/bin/symfony \
     && symfony new app --version="6.2.*" --webapp
 
 ENV PHP_OPCACHE_VALIDATE_TIMESTAMPS="0"
