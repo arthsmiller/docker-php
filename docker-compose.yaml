@@ -12,14 +12,13 @@ services:
     depends_on:
       - mysql
     tty: true
-    command: > 
-      bash -c "
-        php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');";
-        php composer-setup.php;
-        php -r "unlink('composer-setup.php');";
-        mv composer.phar /usr/local/bin/composer;
-        curl -sS https://get.symfony.com/cli/installer | bash;
-        mv /root/.symfony5/bin/symfony /usr/local/bin/symfony"
+    command: 
+        - "php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');""
+        - "php composer-setup.php"
+        - "php -r "unlink('composer-setup.php');""
+        - "mv composer.phar /usr/local/bin/composer"
+        - "curl -sS https://get.symfony.com/cli/installer | bash"
+        - "mv /root/.symfony5/bin/symfony /usr/local/bin/symfony"
 
   nginx:
     image: nginx:latest
