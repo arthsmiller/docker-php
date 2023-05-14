@@ -28,8 +28,8 @@ RUN git config --global user.email "hi@hi.local" \
 ENV PHP_OPCACHE_VALIDATE_TIMESTAMPS="0"
 ADD opcache.ini "/usr/local/etc/php/conf.d/opcache.ini"
 
-RUN cp /usr/local/etc/php/php.ini-development /usr/local/etc/php/php.ini && \
-    sed -i 's/short_open_tag=Off' /usr/local/etc/php/php.ini
+#RUN cp /usr/local/etc/php/php.ini-development /usr/local/etc/php/php.ini && \
+#    sed -i 's/short_open_tag=Off' /usr/local/etc/php/php.ini
 
 WORKDIR app
 
