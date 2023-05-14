@@ -15,4 +15,3 @@ RUN curl -1sLf 'https://dl.cloudsmith.io/public/symfony/stable/setup.deb.sh' | b
     && apt-get install -y symfony-cli
 
 EXPOSE 9000
-CMD ["php-fpm"]
