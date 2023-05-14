@@ -4,7 +4,9 @@
 
 `docker exec -it php bash`
 
-`composer install`
+`composer install -n`
+
+`composer recipes`
 
 ---
 
