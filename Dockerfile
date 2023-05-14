@@ -28,6 +28,9 @@ RUN symfony new app --version="6.2.*" --webapp
 ENV PHP_OPCACHE_VALIDATE_TIMESTAMPS="0"
 ADD opcache.ini "/usr/local/etc/php/conf.d/opcache.ini"
 
+RUN git config --global user.email "hi@hi.local" \
+    && git config --global user.name "hi"
+
 RUN cp /usr/local/etc/php/php.ini-development /usr/local/etc/php/php.ini && \
     sed -i 's/short_open_tag=Off' /usr/local/etc/php/php.ini
 
