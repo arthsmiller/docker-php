@@ -25,3 +25,7 @@
 **To delete all the images,**
 
 `docker rmi -f $(docker images -aq)`
+
+**To remove all Docker volumes,**
+
+`docker volume rm $(docker volume ls -q)`
