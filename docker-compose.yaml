@@ -29,7 +29,7 @@ services:
       - php
     volumes:
       - ./app:/var/www/html
-      - ./nginx/conf.d/:/etc/nginx/sites-available/
+      - ./nginx/conf.d/:/etc/nginx/conf.d/
       - ./html/:/usr/share/nginx/html/temp/
       - certs:/etc/letsencrypt
     networks:
