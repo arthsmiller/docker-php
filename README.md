@@ -1,6 +1,6 @@
 # Docker for Symfony
 
-## After install
+## After docker compose up
 
 ### SSL
 
