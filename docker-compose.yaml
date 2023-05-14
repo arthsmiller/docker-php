@@ -15,6 +15,7 @@ services:
     depends_on:
       - mysql
     tty: true
+    command: ['composer install']
     
   nginx:
     image: nginx:latest
