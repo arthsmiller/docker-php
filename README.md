@@ -12,7 +12,7 @@ if all good
 
 ``certbot --nginx --email hi@hi.local --agree-tos --no-eff-email --force-renewal -d hi.local``
 
----
+### Create Symfony webapp
 
 `docker exec -it php bash`
 
@@ -20,15 +20,12 @@ if all good
 
 `composer recipes`
 
-
-
 ---
 
 ### How to clear docker stuff
 **To delete all containers including its volumes use,**
 
 `docker rm -vf $(docker ps -aq)`
-
 
 **To delete all the images,**
 
