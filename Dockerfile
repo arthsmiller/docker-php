@@ -20,11 +20,9 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
     && php -r "unlink('composer-setup.php');" \
     && mv composer.phar /usr/local/bin/composer
 
-RUN curl -1sLf 'https://dl.cloudsmith.io/public/symfony/stable/setup.deb.sh' | bash \
-    && apt-get install -y symfony-cli
-    
 RUN git config --global user.email "hi@hi.local" \
     && git config --global user.name "hi" \
+    && curl -sS https://get.symfony.com/cli/installer | bash \
     && symfony new app --version="6.2.*" --webapp
 
 ENV PHP_OPCACHE_VALIDATE_TIMESTAMPS="0"
