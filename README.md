@@ -2,9 +2,15 @@
 
 ## After install
 
+### SSL
+
 `docker exec -it nginx bash`
 
-`certbot --nginx -d hi.local`
+`certbot --nginx --email hi@hi.local --agree-tos --no-eff-email --staging -d hi.local`
+
+if all good
+
+``certbot --nginx --email hi@hi.local --agree-tos --no-eff-email --force-renewal -d hi.local``
 
 ---
 
@@ -14,13 +20,7 @@
 
 `composer recipes`
 
-### SSL
 
-`certbot --nginx --email hi@hi.local --agree-tos --no-eff-email --staging -d hi.local`
-
-if all good
-
-``certbot --nginx --email hi@hi.local --agree-tos --no-eff-email --force-renewal -d hi.local``
 
 ---
 
