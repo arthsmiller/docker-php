@@ -2,7 +2,6 @@ version: '3.8'
 
 services:
   php:
-    #image: php:8.2-fpm
     build: 
       context: php
       dockerfile: Dockerfile
@@ -14,7 +13,6 @@ services:
       - app_network
     depends_on:
       - mysql
-    tty: true
     
   nginx:
     build:
@@ -25,8 +23,6 @@ services:
     ports:
       - 80:80
       - 443:443
-    volumes_from:
-      - php
     volumes:
       - ./app:/var/www/html
       - ./nginx/conf.d/:/etc/nginx/conf.d/
