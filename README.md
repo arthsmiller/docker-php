@@ -30,7 +30,7 @@ Still in php container
 
 `yarn add tailwindcss postcss postcss-loader autoprefixer alpinejs --dev`
 
-`yarn create tailwindcss init -p`
+`yarn tailwindcss init -p`
 
 Add to webpack.config.js:
 
