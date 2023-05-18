@@ -10,7 +10,9 @@
 
 if all good
 
-``certbot --nginx --email hi@hi.local --agree-tos --no-eff-email --force-renewal -d hi.local``
+`certbot --nginx --email hi@hi.local --agree-tos --no-eff-email --force-renewal -d hi.local`
+
+then uncomment the SSL relevant lines in the nginx default.conf
 
 ### Create Symfony webapp
 
