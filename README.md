@@ -22,6 +22,38 @@ then uncomment the SSL relevant lines in the nginx default.conf
 
 `composer recipes`
 
+### Webpack & Tailwind
+
+Still in php container
+
+`yarn`
+
+`yarn add tailwindcss postcss postcss-loader autoprefixer alpinejs --dev`
+
+`yarn create tailwindcss init -p`
+
+Add to webpack.config.js:
+
+> .enablePostCssLoader()
+
+Add to tailwind.config.js content array:
+
+> "./assets/**/*.js",
+>    
+> "./templates/**/*.html.twig",
+
+app.css:
+
+> @tailwind base;
+>
+> @tailwind components;
+>
+> @tailwind utilities;
+
+To compile JS & CSS:
+
+`yarn watch`
+
 ---
 
 ### How to clear docker stuff
