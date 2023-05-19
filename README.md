@@ -1,5 +1,12 @@
 # Docker for Symfony
 
+## How to get started
+
+- Set credentials for mysql & phpmyadmin in docker-compose.yaml
+- Configure nginx default.conf
+- Check composer.json in app folder or delete it and add your own projekt
+- Start up docker compose if nothing else needs to be done
+
 ## After docker compose up
 
 ### SSL
