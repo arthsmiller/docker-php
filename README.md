@@ -4,7 +4,7 @@
 
 - Set credentials for mysql & phpmyadmin in docker-compose.yaml
 - Configure nginx default.conf
-- Check composer.json in app folder or delete it and add your own projekt
+- Check composer.json in app folder or delete it and add your own project
 - Start up docker compose if nothing else needs to be done
 
 ## After docker compose up
