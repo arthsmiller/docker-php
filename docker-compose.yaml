@@ -33,8 +33,8 @@ services:
     depends_on:
       - php
     environment:
-      #-PRODHOSTNAME=domain.local
-      #-DEVHOSTNAME=test.domain.local
+      #-PRODHOSTNAME: domain.local
+      #-DEVHOSTNAME: test.domain.local
 
   mysql:
     image: mysql:latest
