@@ -34,6 +34,7 @@ services:
       - php
     environment:
       #-HOSTNAME=domain.local
+      #-DEVHOSTNAME=test.domain.local
 
   mysql:
     image: mysql:latest
