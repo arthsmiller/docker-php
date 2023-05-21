@@ -32,6 +32,8 @@ services:
       - app_network
     depends_on:
       - php
+    environment:
+      #-HOSTNAME=domain.local
 
   mysql:
     image: mysql:latest
