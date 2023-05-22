@@ -25,9 +25,7 @@ then uncomment the SSL relevant lines in the nginx default.conf
 
 `docker exec -it php bash`
 
-`composer install -n`
-
-`composer recipes`
+`composer install`
 
 ### Webpack & Tailwind
 
