@@ -7,9 +7,11 @@ RUN apt-get update && apt-get install -y \
         unzip \
         nano \
     && docker-php-ext-install \
+        pdo_mysql \
         intl \
         opcache \
     && docker-php-ext-enable \
+        pdo_mysql \
         intl \
         opcache
 
