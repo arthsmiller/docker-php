@@ -32,9 +32,6 @@ services:
       - app_network
     depends_on:
       - php
-    environment:
-      #-PRODHOSTNAME: domain.local
-      #-DEVHOSTNAME: test.domain.local
 
   mysql:
     image: mysql:latest
@@ -47,7 +44,7 @@ services:
     environment:
       # ------- CHANGE CREDENTIALS -------
       MYSQL_ROOT_PASSWORD: example
-      MYSQL_DATABASE: example
+      MYSQL_DATABASE: example_db
       MYSQL_USER: example
       MYSQL_PASSWORD: example
     networks:
@@ -62,8 +59,6 @@ services:
     environment:
       # ------- CHANGE CREDENTIALS -------
       PMA_HOST: mysql
-      PMA_USER: root
-      PMA_PASSWORD: example
     networks:
       - app_network
 
